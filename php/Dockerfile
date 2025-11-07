@@ -23,6 +23,8 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     zip \
     intl
 
+RUN docker-php-ext-install mysqli
+
 WORKDIR ${PHP_HOST_ROOT_DIRECTORY}
 
 COPY ./php.ini /usr/local/etc/php/php.ini

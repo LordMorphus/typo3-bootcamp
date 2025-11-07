@@ -1,0 +1,8 @@
+config {
+    contentObjectExceptionHandler = 0
+    compressCss = 0
+    concatenateCss = 0
+    compressJs = 0
+    concatenateJs = 0
+    no_cache = 1
+}

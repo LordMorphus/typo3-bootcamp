@@ -1,0 +1,5 @@
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
+
+@import 'EXT:sitepackage/Configuration/TypoScript/Setup/page.typoscript';
+@import 'EXT:sitepackage/Configuration/TypoScript/Setup/dynamiccontent.typoscript';
+@import 'EXT:sitepackage/Configuration/TypoScript/Config/config.typoscript';

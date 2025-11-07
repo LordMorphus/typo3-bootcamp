@@ -1,4 +1,4 @@
-base: /
+base: '%env("BASE_URL")%'
 errorHandling: {  }
 languages:
   -
@@ -11,3 +11,5 @@ languages:
     flag: us
 rootPageId: 1
 routes: {  }
+dependencies:
+  - mceikens/sitepackage

@@ -1,7 +1,7 @@
 <?php
 return [
     'BE' => [
-        'debug' => false,
+        'debug' => true,
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$TTAuM1JhM3plaDVtUVZLdg$9kdLenPqBkDG1HamJDZzMrfx1M6hx7tSvx1n8CgXFdc',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -18,7 +18,7 @@ return [
                     'collation' => 'utf8mb4_unicode_ci',
                 ],
                 'driver' => 'mysqli',
-                'host' => '127.0.0.1',
+                'host' => 'db',
                 'password' => 'lose12',
                 'port' => 3306,
                 'user' => 'root',
@@ -47,7 +47,7 @@ return [
         'cacheHash' => [
             'enforceValidation' => true,
         ],
-        'debug' => false,
+        'debug' => true,
         'disableNoCacheParameter' => true,
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -71,7 +71,7 @@ return [
     ],
     'MAIL' => [
         'transport' => 'sendmail',
-        'transport_sendmail_command' => '/usr/sbin/sendmail -t -i',
+        'transport_sendmail_command' => '/usr/sbin/sendmail -bs',
         'transport_smtp_encrypt' => '',
         'transport_smtp_password' => '',
         'transport_smtp_server' => '',
@@ -99,7 +99,7 @@ return [
             ],
         ],
         'devIPmask' => '',
-        'displayErrors' => 0,
+        'displayErrors' => 1,
         'encryptionKey' => '9b8f391da3bc56d24ff3a894857509a59b84eb629cd8de2c6e6257c739df9e4e5aaf77d8938eca0d05b81faacb203c5e',
         'exceptionalErrors' => 4096,
         'features' => [
@@ -109,6 +109,7 @@ return [
         ],
         'sitename' => 'My new extension',
         'systemMaintainers' => [
+            1,
             1,
         ],
         'trustedHostsPattern' => '.*',
