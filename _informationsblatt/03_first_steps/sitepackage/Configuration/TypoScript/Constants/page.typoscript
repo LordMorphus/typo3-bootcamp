@@ -1,0 +1,11 @@
+sitepackage {
+    view {
+        templateRootPath = EXT:sitepackage/Resources/Private/Templates/Page/
+        partialRootPath = EXT:sitepackage/Resources/Private/Partials/Page/
+        layoutRootPath = EXT:sitepackage/Resources/Private/Layouts/Page/
+    }
+    page {
+        includeCSS.bootstrap = EXT:sitepackage/Resources/Public/assets/bootstrap.min.css
+        jsFooterInline.bootstrap = EXT:sitepackage/Resources/Public/assets/bootstrap.min.js
+    }
+}

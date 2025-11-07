@@ -1,0 +1,27 @@
+<f:link.action action="list" controller="Guestbook">All comments</f:link.action>
+<f:link.action action="create">Create new Guest</f:link.action>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td>Vorname</td>
+        <td>Nachname</td>
+        <td>Actions</td>
+    </tr>
+    </thead>
+    <tbody>
+
+        <f:for each="{guests}" as="guest">
+            <tr>
+                <td>{guest.firstName}</td>
+                <td>{guest.lastName}</td>
+                <td><f:link.action action="show" arguments="{guest: guest}">Detail</f:link.action>
+                    <f:link.action action="update" arguments="{guest: guest}">Edit</f:link.action>
+                    <f:link.action action="delete" arguments="{guest: guest}">Entfernen</f:link.action>
+
+                </td>
+            </tr>
+
+        </f:for>
+
+    </tbody>
+</table>
