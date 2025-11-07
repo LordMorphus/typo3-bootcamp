@@ -1,9 +1,0 @@
-<h1>Update Comment</h1>
-
-<f:form action="update" method="post" object="{comment}" objectName="comment">
-    <f:form.textarea property="headline" name="headline" id="headline" />
-    <f:form.textarea property="comment" name="comment" id="comment" />
-    <f:form.select name="guest" property="guest" options="{guests}" />
-    <f:form.select name="rating" property="rating" options="{1: '1 Star', 2: '2 Stars', 3: '3 Stars', 4: '4 Stars', 5: '5 Stars'}" />
-    <f:form.submit class="btn btn-primary" value="Absenden"/>
-</f:form>

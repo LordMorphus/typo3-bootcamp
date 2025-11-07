@@ -10,6 +10,9 @@ ExtensionUtility::configurePlugin(
     'guestbook',
     'GuestBook',
     [
-        GuestController::class => 'list',
+        GuestController::class => 'list, detail',
     ],
+    [
+
+    ]
 );

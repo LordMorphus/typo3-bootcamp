@@ -54,6 +54,13 @@ return [
             'options' => [],
         ],
     ],
+    'GFX' => [
+        'processor' => 'ImageMagick',
+        'processor_colorspace' => '',
+        'processor_effects' => '',
+        'processor_enabled' => '1',
+        'processor_path' => '/usr/bin/',
+    ],
     'LOG' => [
         'TYPO3' => [
             'CMS' => [
@@ -61,7 +68,7 @@ return [
                     'writerConfiguration' => [
                         'notice' => [
                             'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
-                                'disabled' => true,
+                                'disabled' => false,
                             ],
                         ],
                     ],
@@ -98,10 +105,10 @@ return [
                 ],
             ],
         ],
-        'devIPmask' => '',
+        'devIPmask' => '*',
         'displayErrors' => 1,
         'encryptionKey' => '9b8f391da3bc56d24ff3a894857509a59b84eb629cd8de2c6e6257c739df9e4e5aaf77d8938eca0d05b81faacb203c5e',
-        'exceptionalErrors' => 4096,
+        'exceptionalErrors' => 12290,
         'features' => [
             'extbase.consistentDateTimeHandling' => true,
             'frontend.cache.autoTagging' => true,

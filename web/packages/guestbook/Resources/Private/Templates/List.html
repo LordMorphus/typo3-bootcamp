@@ -1,1 +1,15 @@
 <f:debug>{_all}</f:debug>
+<f:debug>{guests}</f:debug>
+
+<ul>
+    <f:for each="{guests}" as= "guest">
+        <hr>
+        <li style="margin: 50px;">
+            UID: {guest.uid}<br/>
+            Vorname: {guest.firstName}<br/>
+            Nachname: {guest.lastName}<br/>
+            E-Mail: {guest.email}<br/>
+            <f:link.action action="detail" arguments="{guest: guest}">Detail Ansicht</f:link.action>
+        </li>
+    </f:for>
+</ul>
