@@ -2,22 +2,28 @@
 
 namespace MCEikens\Guestbook\Domain\Model;
 
+use Stringable;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-class Guest extends AbstractEntity
+class Guest extends AbstractEntity implements Stringable
 {
-    protected string $firstName = '';
-    protected string $lastName = '';
-    protected string $email = '';
+    protected string $firstName;
+    protected string $lastName;
+    protected string $email;
 
-    public function getEmail(): string
+    /**
+     * @var ObjectStorage<Comment>|null
+     */
+    protected ?ObjectStorage $comments = null;
+    public function getFirstName(): string
     {
-        return $this->email;
+        return $this->firstName;
     }
 
-    public function setEmail(string $Email): void
+    public function setFirstName(string $firstName): void
     {
-        $this->email = $Email;
+        $this->firstName = $firstName;
     }
 
     public function getLastName(): string
@@ -30,13 +36,38 @@ class Guest extends AbstractEntity
         $this->lastName = $lastName;
     }
 
-    public function getFirstName(): string
+    public function getEmail(): string
     {
-        return $this->firstName;
+        return $this->email;
     }
 
-    public function setFirstName(string $firstName): void
+    public function setEmail(string $email): void
     {
-        $this->firstName = $firstName;
+        $this->email = $email;
+    }
+
+    public function getComments(): ?ObjectStorage
+    {
+        return $this->comments;
+    }
+
+    public function setComments(?ObjectStorage $comments): void
+    {
+        $this->comments = $comments;
+    }
+
+    public function addComment(Comment $comment): void
+    {
+        $this->comments->attach($comment);
+    }
+
+    public function removeComment(Comment $comment): void
+    {
+        $this->comments->detach($comment);
+    }
+
+    public function __toString(): string
+    {
+        return $this->firstName . ' ' . $this->lastName;
     }
 }

@@ -1,0 +1,20 @@
+<f:link.action action="create">Create new comment</f:link.action>
+<f:link.action action="create" controller="Guest">Create new Guest</f:link.action>
+<f:link.action action="list" controller="Guest">All guests</f:link.action>
+
+<ul>
+    <f:for each="{comments}" as="comment">
+        <li>
+            <ul>
+                <li><f:format.raw>{comment.headline}</f:format.raw></li>
+                <li>{comment.rating}</li>
+                <li>{comment.guest.firstName} {comment.guest.lastName}</li>
+                <li><f:format.raw>{comment.comment}</f:format.raw></li>
+                <li>
+                    <f:link.action action="update" arguments="{comment: comment}">Update</f:link.action>
+                    <f:link.action action="delete" arguments="{comment: comment}">Remove</f:link.action>
+                </li>
+            </ul>
+        </li>
+    </f:for>
+</ul>
